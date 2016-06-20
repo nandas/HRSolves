@@ -11,7 +11,7 @@ public class MainLL {
 		operations.Print(head);
 
 	}
-	
+
 	void Print(Node head)
 	{
 	  while(head !=null){

@@ -9,6 +9,10 @@ public class Node
 		data=x;
 	}
    
+   public Node(){
+	   
+   }
+   
    void appendToEnd(int data){
 		Node  newnode=new Node(data);
 		Node head=this;
@@ -17,5 +21,13 @@ public class Node
 		}
 		head.next=newnode;
 		
+	}
+   
+   void Print(Node head)
+	{
+	  while(head !=null){
+		  System.out.println(head.data);
+		  head=head.next;
+	  }
 	}
 }
