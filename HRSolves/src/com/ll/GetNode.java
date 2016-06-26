@@ -9,6 +9,7 @@ public class GetNode {
 		test.appendToEnd(2);
 		test.appendToEnd(1);
 		GetNode gn=new GetNode();
+		System.out.println(gn.GetNode1(test,0));
 
 	}
 	
@@ -23,18 +24,30 @@ public class GetNode {
 	}
 	
 	
-	Node Reverse(Node head) {
-		if(head == null ) return null;
-		if(head.next==null) return head;
-		//3->2->1->Null
-		Node temp=head.next;        //3 node to temp
-		System.out.println(temp.data+",");
-		head.next=null;             //3's next null in head
-		Node temp1= Reverse(temp);
-		temp.next=head;
-		return temp1;
+
+	int GetNode1(Node head,int n) 
+		    {
+		        int len = 0;
+		        Node temp = head;
+		 
+		        while (temp != null)
+		        {
+		            temp = temp.next;
+		            len++;
+		        }
+		 
+		        if (len < n)
+		            return -1;
+		 
+		        temp = head;
+		 
+		        for (int i = 1; i < len-n; i++)
+		            temp = temp.next;
+		 
+		        return temp.data;
+		    }
 
 
-	}
+	
 
 }
